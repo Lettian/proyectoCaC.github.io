@@ -117,7 +117,7 @@ h3{
 /* Clase Fondo */
 /* Definimos imagen, estilo, altura del viewport, color */
 .fondo{
-    background-image: url(/imagenes/ba1.jpg);
+    background-image: url(../imagenes/ba1.jpg);
     background-size: cover;             /* Se estira por el ancho */
     background-repeat: no-repeat;       /* No repite el tamaÃ±o en caso que la imagen sea mas peque{o que el viewport */
     height: 100vh;                      /* Ocupa el 100 del viewport */
