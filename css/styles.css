@@ -1,0 +1,464 @@
+/* ----------------------- Normalizacion ----------------------- */
+
+/*  Custom property */
+:root{
+    /* Paleta de colores*/
+    --background-greyDark: rgb(51, 58, 64);
+    --color-white: rgb(228, 241, 252);
+    --color-grey:  rgba(255, 255, 255, 0.5);
+    /* Fuentes  */
+    --text-xl: 52px;
+    --text-lg: 38px;
+    --text-md: 28px;
+    --text-sm: 20px;
+    --text-xs: 16px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    /* Tamanio de fuente navegador */ 
+    font-size: 62.5%;
+    /* Familia elegida por defecto */ 
+    font-family: 'Barlow', sans-serif;
+    /* Color de texto base */ 
+    color: #2b2b2b;
+}
+
+ul,ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    /* Elimina underline*/
+    text-decoration: none;
+}
+
+p{
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1{
+    font-size: var(--text-xl);
+    color: var(--color-white);
+}
+
+h2{
+    font-size: var(--text-lg)
+}
+
+h3{
+    font-size: var(--text-md)
+}
+/* ----------------------- Fin Normalizacion ----------------------- */
+
+/* NAVBAR */
+
+/* Colo de la barra de navegacion */
+.navbar-expand-lg{
+    background-color: var(--background-greyDark);
+    padding: 10px 0;
+}
+
+/* Estilo del titulo de barra de navegacion */
+.navbar-brand-h1{
+    color: var(--color-white);
+    font-size: var(--text-sm);
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del logo de imagen, ej: codo a codo */
+.navbar img{
+    width: 90px;
+    margin-right: 0;
+    padding: 12px 0px;
+}
+
+/* Estilo de boton en navegadores moviles */
+.navbar .navbar-toggler{
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 0.25rem;
+    
+}
+
+/* Centramos las opciones de la barra de navegacion */
+.navbar .navbar-nav{
+    text-align: center;
+    font-size: var(--text-xs);
+}
+
+/* La ultima opcion cambiara su color. */
+.navbar .navbar-nav a:last-child{
+    color:green;
+}
+
+/* Le damos efecto al pasar el cursor */
+.navbar .navbar-nav a:hover{
+    color: grey;
+}
+
+/* ----------------------------------------- Imagen de fondo ------------------------------------------------ */
+
+/* Clase Fondo */
+/* Definimos imagen, estilo, altura del viewport, color */
+.fondo{
+    background-image: url(/imagenes/ba1.jpg);
+    background-size: cover;             /* Se estira por el ancho */
+    background-repeat: no-repeat;       /* No repite el tamaÃ±o en caso que la imagen sea mas peque{o que el viewport */
+    height: 100vh;                      /* Ocupa el 100 del viewport */
+    color: var(--color-white);  /* Color del texto */
+}
+
+/* Clase Sombreado */
+/* Aplicamos un sombreado sobre el area de la imagen */
+.fondo .sombreado {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+}
+
+/* Clase contenido */
+/* Aplica estilos al container padre que contiene al titulo y parrafo */
+.fondo .container-flex{
+    width: 80%; 
+    height: 100%;
+    margin: 0 auto;              /* Alineamos al centro el container*/
+    display: flex; 
+    justify-content: flex-end;   /* Que pegue el contenido en orientaciÃ³n horizontal al final */
+    align-items: flex-end;       /* Orientacion en vertical de abajo hacia arriba */
+    font-size: var(--text-sm);
+ }
+
+ /* Clase contenido */
+.fondo .contenido{
+    width: 50%;             /* Ocupamos la mitad de la caja que la contiene */
+    margin-bottom: 20vh;    /* Le agregamos un margen inferior del 20% del viewport  */
+    text-align: right;      /* Desplazamos el contenido a la derecha */
+}
+
+/* Clase Boton*/
+.fondo .boton{
+    display: flex;
+    flex-direction: row;        /* Para que vaya en fila */
+    justify-content: flex-end;  /* Para que se desplace de derecha a izquierda*/
+}
+
+/* Clase boton en el elemento a */
+/* Aplicamos el color al contenido del boton*/
+.fondo .boton a{
+    color: var(--color-white);    
+}
+
+/* Aplicamos direccion al boton*/
+.fondo .btn{
+    padding: 8px 16px;
+    margin: 8px;
+    border-radius:  5px;
+    font-size: 1.5rem;  
+}
+
+/* Al primer boton, le aplicamos un borde solid de 1 px */
+.fondo .btn-transparent{
+    border: 1px solid var(--color-white);
+}
+
+/* Aplicamos el estilo de pintarse al pasar el puntero sobre el boton */
+.fondo .btn-transparent:hover{
+    background-color: var(--color-grey);
+    border: 1px solid var(--color-grey);
+}
+
+/* Al segundo boton, le aplicamos un borde solid de 1 px */
+.fondo .btn-solid{
+    background-color: green;
+    border: 1px solid green;
+}
+
+/* Aplicamos el estilo de pintarse al pasar el puntero sobre el boton */
+.fondo .btn-solid:hover{
+    background-color: rgba(117, 211, 80, 0.863);
+    border: 1px solid rgba(117, 211, 80, 0.863);
+}
+
+/* ----------------------------------------- TARJETAS ------------------------------------------------ */
+
+/* Clase Orador , clase titulo, centramos texto*/
+.titulo{
+    text-align: center;
+}
+
+/* Movemos el margen del h5 */
+.titulo h5{
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+/* Modificamos el ancho todas las tarjetas */
+.card{
+    width: 30rem;
+}
+
+/* ----------------------------------------- PAISAJE ------------------------------------------------ */
+
+/* Flex a la imagen */
+.paisaje .container-paisaje{
+    margin-top: 1rem;
+    display: flex;
+}
+
+/* Ajusta la dimension de la imagen en el 50 del viewport
+    Entre Paisaje y el contenido
+*/
+.container-paisaje img{
+    width: 50vw;
+    margin: 0;
+}
+
+/* Definimos padding y color del bkgr y letra del parrafo del paisaje*/
+.container-paisaje .paisaje-contenido{
+    background-color: var(--background-greyDark);
+    color: var(--color-white);
+    padding: 16px;
+    font-size: var(--text-xs);
+}
+
+/* Cambiamos el ancho de subtitulo*/
+.container-paisaje .paisaje-contenido h2{
+    font-weight: 0;
+    font-size: var(--text-md);
+}
+
+.container-paisaje .paisaje-contenido p{
+    font-weight: 400;
+    font-size: small ;
+}
+
+/* Le damos dimensiones al boton dentro del parrafo */
+.container-paisaje .btn{
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 5px;
+    color: var(--color-white);
+}
+
+/* Definimos Borde y color del btn */
+.container-paisaje .btn-transparent{
+    border: 1px solid var(--color-white);
+}
+
+/* Definimos efecto al pasar curso en el boton */
+.container-paisaje .btn-transparent:hover{
+    background-color: var(--color-grey);
+    color: var(--color-white);
+    border: 1px solid var(--color-grey);
+    
+}
+
+/* ----------------------------------------- FORMULARIO  ------------------------------------------------ */
+
+/* Alineamos titulo de formulario */
+.formulario .titulo{
+    text-align: center;
+    margin-top: var(--text-xs);
+    margin-bottom: var(--text-xs);
+}
+
+/* Tamanio del parrafo*/
+.formulario .titulo p{
+    font-size: var(--text-xs);
+}
+
+/* Definimos el estilo del subrayado*/
+/* Al ser llamado x ID, no hace falta llamar las superclases */
+.formulario .titulo #subrayado{
+    text-decoration: underline  black;
+}
+
+.formulario .container-formulario{
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario .container-formulario .nombreCompleto{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.formulario .container-formulario .datos{
+    width: 48%;
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.formulario .container-formulario .datos:focus{
+    outline: 1px solid black;
+}
+
+.formulario .container-formulario #acercaDe{
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.formulario .container-formulario #acercaDe:focus{
+    outline: 1px solid black;
+}
+
+/* TamaÃ±o del parrafo*/
+.formulario .container-formulario p{
+    font-size: 12px;
+}
+
+.formulario .container-formulario .btn-submit{
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.8rem 0;
+    font-size: 1.5rem;
+    background-color: green;
+    color: var(--color-grey);
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+}
+
+.formulario .container-formulario .btn-submit:hover{
+    background-color: rgba(117, 211, 80, 0.863);
+    color: gray;
+}
+
+/* ----------------------------------------- FOOTER  ------------------------------------------------ */
+
+.footer{
+    background-image: linear-gradient(to right, blue, cyan);
+}
+
+.footer .container-footer{
+    width: 90vw;    
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .container-footer a{
+    text-decoration: none;
+    color: var(--color-white);
+    padding: 3rem 0;
+    width: 100px;
+    text-align: center;
+}
+
+.footer .container-footer a:hover{
+    color:var(--color-grey)
+}
+
+/* ----------------------------------------- MEDIA QUERYS  ------------------------------------------------ */
+
+/* Para 992 px */
+@media (max-width:768px) and (max-width:992px){
+    .fondo .contenido{
+        width: 100%;
+        margin-bottom: 20vh;
+        text-align: center;
+    }
+
+    .fondo .boton{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .formulario .container-formulario{
+        width: 65vw;
+    }
+
+}
+
+/* Para 768 */
+@media(max-width:576px) and (max-width: 768px){
+    .container-paisaje{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-paisaje img{
+        width: 100vw;
+    }
+
+    .container-paisaje .paisaje-contenido{
+        display: block;
+        text-align: center;
+    }
+
+    .paisaje-contenido .btn{
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .formulario .container-formulario .nombreCompleto{
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    .formulario .container-formulario .nombreCompleto .datos{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .formulario .container-formulario{
+        width: 80vw;
+    }
+
+    .footer .container-footer{
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .footer .container-footer a{
+        padding: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Para 576 */
+@media(max-width: 576px){
+    
+    .fondo .contenido{
+        width: 100%;
+        margin-bottom: 20vh;
+        text-align: center;
+        
+        justify-content: center;
+    }
+
+    .fondo .boton{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
