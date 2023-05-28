@@ -10,6 +10,10 @@
   <!-- Bootstrap 5.3-->
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Importamos Font awesome para agregar icono -->
+  <script src="https://kit.fontawesome.com/0bb2b5ac62.js" crossorigin="anonymous"></script>
+  
 </head>
 
 <body>
@@ -36,7 +40,7 @@
           <a class="nav-link" href="#tarjetaOradores">Los oradores</a>
           <a class="nav-link" href="#">El lugar y la fecha</a>
           <a class="nav-link" href="#formulario">Conviertete en orador</a>
-          <a class="nav-link" href="#">Comprar tickets</a>
+          <a class="nav-link" href="#idTickets">Comprar tickets</a>
         </div>
       </div>
     </div>
@@ -56,7 +60,7 @@
             </p>
             <div class="boton">
               <a class="btn btn-transparent" href="#formulario">Quiero ser orador</a>
-              <a class="btn btn-solid" href="#">Comprar tickets</a>
+              <a class="btn btn-solid" href="#idTickets">Comprar tickets</a>
             </div>
           </div>
         </div>
@@ -166,7 +170,82 @@
         </div>
     </section>
     
+    <!-- SECCION DE TICKETS  -->
+    <section class="tickets-section" id="idTickets">
+      <div id="tickets" class="tickets">
+        <div class="container-tickets">
+
+          <!-- Seccion de categoria y texto del ticket -->
+          <div class="tickets-categoria">
+            
+            <div  class="estudiante">
+              <h3>Estudiante</h3>
+              <p>Tienen un descuento</p>
+              <h2>80%</h2>
+              <h6>* presentar documentación</h6>
+            </div>
+
+            <div class="trainee">
+              <h3>Trainee</h3>
+              <p>Tienen un descuento</p>
+              <h2>50%</h2>
+              <h6>*presentar documentación</h6>
+            </div>
+
+            <div class="junior">
+              <h3>Junior</h3>
+              <p>Tienen un descuento</p>
+              <h2>15%</h2>
+              <h6>*presentar documentación</h6>
+            </div>
+
+          </div>
+
+          <div class="tickets-texto">
+            <h6>VENTA</h6>
+            <h1>VALOR DE TICKET $200</h1>
+          </div>
+          <!-- Fin seccion categoria y texto del  ticket -->
+
+          <!-- SECCION FORMULARIO DE TICKETS -->
+          <form class="tickets-Formulario" action=""> 
+            <div class="ticketsFormulario"> <!-- Div para aplicar modelo responsive -->
+              <input type="text" class="ticketsNombre" name="nombre" placeholder="Nombre" required>
+              <input type="text" class="ticketsApellido" name="apellido" placeholder="Apellido" required>
+              <input type="email" class="ticketsEmail" name="email" placeholder="Correo" required>
+
+              <!-- Div Opcion de Cantidad -->
+              <div class="ticketsCantidad">
+                <label for="cantidad">Cantidad</label>
+                <input id="tickets-Cantidad" type="text" class="tickets-Cantidad" name="cantidad" placeholder="Cantidad" required>
+              </div>
+
+              <!-- Div Opcion Categoria -->
+              <div class="ticketsCategoria">
+                <label for="categoria">Categoria</label>
+                <select name="categoria" class="tickets-elegir-categoria">
+                  <option value="estudiante">Estudiante</option>
+                  <option value="trainee">Trainee</option>
+                  <option value="junior">Junior</option>
+                </select>
+              </div>
+
+              <!-- CUADRO MOSTRAR TOTAL A PAGAR -->
+              <output class="tickets-salida"><span class="ticketsValor">Total a pagar: $</span></span></output>
+              <button id="ticketsBorrar" type="reset" class="btnTickets" name="borrar">Borrar</button>
+              <button id="ticketsResumen" class="btnTickets" name="resumen">Resumen</button>
+
+            </div>
+          </form>
+          
+
+          </div>
+
+        </div>
+      </div>
+
     </section>
+
 
   </main>
 
@@ -185,6 +264,7 @@
 
   <!-- BOOTSTRAP SCRIPT JS -->
   <script src="js/bootstrap.js"></script>
+  <script src="js/main.js" ></script>
 </body>
 
 </html>

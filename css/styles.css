@@ -1,11 +1,11 @@
 /* ----------------------- Normalizacion ----------------------- */
 
 /*  Custom property */
-:root{
+:root {
     /* Paleta de colores*/
     --background-greyDark: rgb(51, 58, 64);
     --color-white: rgb(228, 241, 252);
-    --color-grey:  rgba(255, 255, 255, 0.5);
+    --color-grey: rgba(255, 255, 255, 0.5);
     /* Fuentes  */
     --text-xl: 52px;
     --text-lg: 38px;
@@ -14,64 +14,71 @@
     --text-xs: 16px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
-    /* Tamanio de fuente navegador */ 
+html {
+    /* Tamanio de fuente navegador */
     font-size: 62.5%;
-    /* Familia elegida por defecto */ 
+    /* Familia elegida por defecto */
     font-family: 'Barlow', sans-serif;
-    /* Color de texto base */ 
+    /* Color de texto base */
     color: #2b2b2b;
 }
 
-ul,ol{
+ul,
+ol {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-a{
+a {
     /* Elimina underline*/
     text-decoration: none;
 }
 
-p{
+p {
     margin: 0;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-h1{
+h1 {
     font-size: var(--text-xl);
     color: var(--color-white);
 }
 
-h2{
+h2 {
     font-size: var(--text-lg)
 }
 
-h3{
+h3 {
     font-size: var(--text-md)
 }
+
 /* ----------------------- Fin Normalizacion ----------------------- */
 
-/* NAVBAR */
+/* ----------------------------------------- NAVBAR ----------------------------------------- */
 
 /* Colo de la barra de navegacion */
-.navbar-expand-lg{
+.navbar-expand-lg {
     background-color: var(--background-greyDark);
-    padding: 10px 0;
+    /* Agregamos estas propiedades que permiten que la barra permanezca fija al scrollear por la pagina*/
+    /* z-index permite que se muestre por encima de todos los elementos que se muestren en pantalla */
+    /* Y con width le damos un tamaño del 100% para que abarque todo el documento */
+    position: fixed;
+    z-index: 100;
+    width: 100%;
 }
 
 /* Estilo del titulo de barra de navegacion */
-.navbar-brand-h1{
+.navbar-brand-h1 {
     color: var(--color-white);
     font-size: var(--text-sm);
     margin: 0;
@@ -79,36 +86,37 @@ h3{
 }
 
 /* Estilo del logo de imagen, ej: codo a codo */
-.navbar img{
+.navbar img {
     width: 90px;
     margin-right: 0;
     padding: 12px 0px;
 }
 
 /* Estilo de boton en navegadores moviles */
-.navbar .navbar-toggler{
+.navbar .navbar-toggler {
     padding: 0.25rem 0.75rem;
     font-size: 1.25rem;
     line-height: 1;
     background-color: transparent;
     border: 1px solid grey;
     border-radius: 0.25rem;
-    
+
 }
 
 /* Centramos las opciones de la barra de navegacion */
-.navbar .navbar-nav{
+.navbar .navbar-nav {
     text-align: center;
     font-size: var(--text-xs);
+
 }
 
 /* La ultima opcion cambiara su color. */
-.navbar .navbar-nav a:last-child{
-    color:green;
+.navbar .navbar-nav a:last-child {
+    color: green;
 }
 
 /* Le damos efecto al pasar el cursor */
-.navbar .navbar-nav a:hover{
+.navbar .navbar-nav a:hover {
     color: grey;
 }
 
@@ -116,12 +124,16 @@ h3{
 
 /* Clase Fondo */
 /* Definimos imagen, estilo, altura del viewport, color */
-.fondo{
+.fondo {
     background-image: url(../imagenes/ba1.jpg);
-    background-size: cover;             /* Se estira por el ancho */
-    background-repeat: no-repeat;       /* No repite el tamaÃ±o en caso que la imagen sea mas peque{o que el viewport */
-    height: 100vh;                      /* Ocupa el 100 del viewport */
-    color: var(--color-white);  /* Color del texto */
+    background-size: cover;
+    /* Se estira por el ancho */
+    background-repeat: no-repeat;
+    /* No repite el tamaÃ±o en caso que la imagen sea mas peque{o que el viewport */
+    height: 100vh;
+    /* Ocupa el 100 del viewport */
+    color: var(--color-white);
+    /* Color del texto */
 }
 
 /* Clase Sombreado */
@@ -134,63 +146,71 @@ h3{
 
 /* Clase contenido */
 /* Aplica estilos al container padre que contiene al titulo y parrafo */
-.fondo .container-flex{
-    width: 80%; 
+.fondo .container-flex {
+    width: 80%;
     height: 100%;
-    margin: 0 auto;              /* Alineamos al centro el container*/
-    display: flex; 
-    justify-content: flex-end;   /* Que pegue el contenido en orientaciÃ³n horizontal al final */
-    align-items: flex-end;       /* Orientacion en vertical de abajo hacia arriba */
+    margin: 0 auto;
+    /* Alineamos al centro el container*/
+    display: flex;
+    justify-content: flex-end;
+    /* Que pegue el contenido en orientaciÃ³n horizontal al final */
+    align-items: flex-end;
+    /* Orientacion en vertical de abajo hacia arriba */
     font-size: var(--text-sm);
- }
+}
 
- /* Clase contenido */
-.fondo .contenido{
-    width: 50%;             /* Ocupamos la mitad de la caja que la contiene */
-    margin-bottom: 20vh;    /* Le agregamos un margen inferior del 20% del viewport  */
-    text-align: right;      /* Desplazamos el contenido a la derecha */
+/* Clase contenido */
+.fondo .contenido {
+    width: 50%;
+    /* Ocupamos la mitad de la caja que la contiene */
+    margin-bottom: 20vh;
+    /* Le agregamos un margen inferior del 20% del viewport  */
+    text-align: right;
+    /* Desplazamos el contenido a la derecha */
 }
 
 /* Clase Boton*/
-.fondo .boton{
+.fondo .boton {
     display: flex;
-    flex-direction: row;        /* Para que vaya en fila */
-    justify-content: flex-end;  /* Para que se desplace de derecha a izquierda*/
+    flex-direction: row;
+    /* Para que vaya en fila */
+    justify-content: flex-end;
+    /* Para que se desplace de derecha a izquierda*/
 }
 
 /* Clase boton en el elemento a */
 /* Aplicamos el color al contenido del boton*/
-.fondo .boton a{
-    color: var(--color-white);    
+.fondo .boton a {
+    color: var(--color-white);
 }
 
 /* Aplicamos direccion al boton*/
-.fondo .btn{
+.fondo .btn {
     padding: 8px 16px;
     margin: 8px;
-    border-radius:  5px;
-    font-size: 1.5rem;  
+    border-radius: 5px;
+    font-size: 1.5rem;
 }
 
 /* Al primer boton, le aplicamos un borde solid de 1 px */
-.fondo .btn-transparent{
+.fondo .btn-transparent {
     border: 1px solid var(--color-white);
 }
 
 /* Aplicamos el estilo de pintarse al pasar el puntero sobre el boton */
-.fondo .btn-transparent:hover{
+.fondo .btn-transparent:hover {
     background-color: var(--color-grey);
     border: 1px solid var(--color-grey);
 }
 
 /* Al segundo boton, le aplicamos un borde solid de 1 px */
-.fondo .btn-solid{
+.fondo .btn-solid {
     background-color: green;
     border: 1px solid green;
 }
 
 /* Aplicamos el estilo de pintarse al pasar el puntero sobre el boton */
-.fondo .btn-solid:hover{
+.fondo .btn-solid:hover {
     background-color: rgba(117, 211, 80, 0.863);
     border: 1px solid rgba(117, 211, 80, 0.863);
 }
@@ -198,58 +218,60 @@ h3{
 /* ----------------------------------------- TARJETAS ------------------------------------------------ */
 
 /* Clase Orador , clase titulo, centramos texto*/
-.titulo{
+.titulo {
     text-align: center;
 }
 
 /* Movemos el margen del h5 */
-.titulo h5{
+.titulo h5 {
     margin-top: 16px;
     margin-bottom: 0;
 }
 
 /* Modificamos el ancho todas las tarjetas */
-.card{
+.card {
     width: 30rem;
 }
 
 /* ----------------------------------------- PAISAJE ------------------------------------------------ */
 
 /* Flex a la imagen */
-.paisaje .container-paisaje{
+.paisaje .container-paisaje {
     margin-top: 1rem;
     display: flex;
+
 }
 
 /* Ajusta la dimension de la imagen en el 50 del viewport
     Entre Paisaje y el contenido
 */
-.container-paisaje img{
+.container-paisaje img {
     width: 50vw;
     margin: 0;
 }
 
 /* Definimos padding y color del bkgr y letra del parrafo del paisaje*/
-.container-paisaje .paisaje-contenido{
+.container-paisaje .paisaje-contenido {
     background-color: var(--background-greyDark);
     color: var(--color-white);
     padding: 16px;
     font-size: var(--text-xs);
+
 }
 
 /* Cambiamos el ancho de subtitulo*/
-.container-paisaje .paisaje-contenido h2{
+.container-paisaje .paisaje-contenido h2 {
     font-weight: 0;
     font-size: var(--text-md);
 }
 
-.container-paisaje .paisaje-contenido p{
+.container-paisaje .paisaje-contenido p {
     font-weight: 400;
-    font-size: small ;
+    font-size: small;
 }
 
 /* Le damos dimensiones al boton dentro del parrafo */
-.container-paisaje .btn{
+.container-paisaje .btn {
     padding: 8px 16px;
     margin: 0;
     border-radius: 5px;
@@ -257,80 +279,80 @@ h3{
 }
 
 /* Definimos Borde y color del btn */
-.container-paisaje .btn-transparent{
+.container-paisaje .btn-transparent {
     border: 1px solid var(--color-white);
 }
 
 /* Definimos efecto al pasar curso en el boton */
-.container-paisaje .btn-transparent:hover{
+.container-paisaje .btn-transparent:hover {
     background-color: var(--color-grey);
     color: var(--color-white);
     border: 1px solid var(--color-grey);
-    
+
 }
 
 /* ----------------------------------------- FORMULARIO  ------------------------------------------------ */
 
 /* Alineamos titulo de formulario */
-.formulario .titulo{
+.formulario .titulo {
     text-align: center;
     margin-top: var(--text-xs);
     margin-bottom: var(--text-xs);
 }
 
 /* Tamanio del parrafo*/
-.formulario .titulo p{
+.formulario .titulo p {
     font-size: var(--text-xs);
 }
 
 /* Definimos el estilo del subrayado*/
 /* Al ser llamado x ID, no hace falta llamar las superclases */
-.formulario .titulo #subrayado{
-    text-decoration: underline  black;
+.formulario .titulo #subrayado {
+    text-decoration: underline black;
 }
 
-.formulario .container-formulario{
+.formulario .container-formulario {
     width: 50vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-.formulario .container-formulario .nombreCompleto{
+.formulario .container-formulario .nombreCompleto {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.formulario .container-formulario .datos{
+.formulario .container-formulario .datos {
     width: 48%;
     padding: 0.7rem 0.5rem;
     border-radius: 5px;
     border: 1px solid grey;
 }
 
-.formulario .container-formulario .datos:focus{
+.formulario .container-formulario .datos:focus {
     outline: 1px solid black;
 }
 
-.formulario .container-formulario #acercaDe{
+.formulario .container-formulario #acercaDe {
     width: 100%;
     padding: 0.7rem 0.5rem;
     border-radius: 5px;
     border: 1px solid grey;
 }
 
-.formulario .container-formulario #acercaDe:focus{
+.formulario .container-formulario #acercaDe:focus {
     outline: 1px solid black;
 }
 
 /* TamaÃ±o del parrafo*/
-.formulario .container-formulario p{
+.formulario .container-formulario p {
     font-size: 12px;
 }
 
-.formulario .container-formulario .btn-submit{
+.formulario .container-formulario .btn-submit {
     width: 100%;
     margin: 1rem 0;
     padding: 0.8rem 0;
@@ -342,26 +364,26 @@ h3{
     border: none;
 }
 
-.formulario .container-formulario .btn-submit:hover{
+.formulario .container-formulario .btn-submit:hover {
     background-color: rgba(117, 211, 80, 0.863);
     color: gray;
 }
 
 /* ----------------------------------------- FOOTER  ------------------------------------------------ */
 
-.footer{
+.footer {
     background-image: linear-gradient(to right, blue, cyan);
 }
 
-.footer .container-footer{
-    width: 90vw;    
+.footer .container-footer {
+    width: 90vw;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer .container-footer a{
+.footer .container-footer a {
     text-decoration: none;
     color: var(--color-white);
     padding: 3rem 0;
@@ -369,93 +391,265 @@ h3{
     text-align: center;
 }
 
-.footer .container-footer a:hover{
-    color:var(--color-grey)
+.footer .container-footer a:hover {
+    color: var(--color-grey)
+}
+
+/* ----------------------------------------- SECCION TICKETS  ------------------------------------------------ */
+
+/* Div completo de tickets */
+.tickets .container-tickets {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Centramos la seccion de categoria */
+.tickets-categoria {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+/* Formateamos propiedades de la sección de estudiante-trainee-junior */
+.tickets-categoria .estudiante, .trainee, .junior{
+    width: 30%;
+    min-width: 180px;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem;
+    box-shadow: 2px 2px 2px 1px black;
+    cursor: pointer; /* Cambia el curso al pasar por la seccion */
+}
+
+/* Efecto de cada seccion al pasar el mouse se ahique el mismo */
+.tickets-categoria .estudiante:hover,
+.trainee:hover,
+.junior:hover {
+    transform: scale(0.95);
+    /* 1 queda como está - 2 lo duplica - 0.5 es muy chico */
+}
+
+/* Fuente h2 para todo las clases: */
+.tickets-categoria h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+/* Fuente h3 para todo las clases: */
+.tickets-categoria h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Fuente p para todo las clases: */
+
+.tickets-categoria p {
+    font-size: 1.5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+/* Fuente h6 para todo las clases: */
+.tickets-categoria h6 {
+    font-size: 1.2rem;
+    color: rgba(112, 103, 103, 0.863);
+}
+
+/* Seccion de las 3 categorias, le damos un borde, tanto en su radio como un color distinto para cada uno */
+.tickets-categoria .estudiante {
+    border-radius: 5px;
+    border: 2px solid blue;
+}
+
+.tickets-categoria .trainee {
+    border-radius: 5px;
+    border: 2px solid green;
+}
+
+.tickets-categoria .junior {
+    border-radius: 5px;
+    border: 2px solid orange;
+}
+
+/* Centramos el titulo del texto de la clase tickets-texto */
+.container-tickets .tickets-texto {
+    text-align: center;
+}
+
+.container-tickets .tickets-texto h1 {
+    color: black;
+}
+
+/* Le damos formato al texto del formulario */
+.ticketsFormulario {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Le damos formato al  formulario donde se ingresa el nombre/apellido del solicitante */
+.ticketsFormulario .ticketsNombre, .ticketsApellido {
+    width: 49%;
+    margin: 0.5rem 0;
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding: 5px;
+    
+}
+
+/* Le damos formato al  formulario donde se ingresa el email del solicitante */
+.ticketsFormulario .ticketsEmail {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding: 4px;
+}
+
+/* Le damos formato donde se informa la cantidad de tickets y la categoria */
+.ticketsFormulario .ticketsCantidad, .ticketsCategoria {
+    width: 49%;
+    margin: 0.5rem 0;
+}
+
+.ticketsFormulario .tickets-Cantidad, .tickets-elegir-categoria{
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding: 4px;
+}
+
+.ticketsFormulario .tickets-categoria {
+    background-color: transparent;
+    color: grey;
+}
+
+.ticketsFormulario .tickets-salida {
+    width: 100%;
+    background-color: rgb(180, 233, 233);
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    color: rgb(34, 12, 231);
+}
+
+.tickets-salida .ticketsValor {
+    float: left;
+    color: black;
+}
+
+.ticketsFormulario .btnTickets {
+    width: 49%;
+    background-color: green;
+    color: var(--color-grey);
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.tickets-Formulario .btnTickets:hover {
+    background-color: rgba(117, 211, 80, 0.863);
+    color: black;
+}
+
+/* Estilo que nos permite mover a derecha el boton comprar */
+.tickets-salida .ticketsComprar {
+    float: right;
+    cursor: pointer;
+}
+    
+/* Estilo para agregar el icono de comprar despues del texto */
+.ticketsFormulario .ticketsComprar::after {
+    font: var(--fa-font-solid);
+    content: "\f54f";
 }
 
 /* ----------------------------------------- MEDIA QUERYS  ------------------------------------------------ */
 
 /* Para 992 px */
-@media (max-width:768px) and (max-width:992px){
-    .fondo .contenido{
+@media (max-width:768px) and (max-width:992px) {
+    .fondo .contenido {
         width: 100%;
         margin-bottom: 20vh;
         text-align: center;
     }
 
-    .fondo .boton{
+    .fondo .boton {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    .formulario .container-formulario{
+    .formulario .container-formulario {
         width: 65vw;
     }
 
 }
 
 /* Para 768 */
-@media(max-width:576px) and (max-width: 768px){
-    .container-paisaje{
+@media(max-width:576px) and (max-width: 768px) {
+    .container-paisaje {
         display: flex;
         flex-direction: column;
     }
 
-    .container-paisaje img{
+    .container-paisaje img {
         width: 100vw;
     }
 
-    .container-paisaje .paisaje-contenido{
+    .container-paisaje .paisaje-contenido {
         display: block;
         text-align: center;
     }
 
-    .paisaje-contenido .btn{
+    .paisaje-contenido .btn {
         width: 50%;
         margin: 0 auto;
     }
 
-    .formulario .container-formulario .nombreCompleto{
+    .formulario .container-formulario .nombreCompleto {
         width: 100%;
         flex-direction: column;
         justify-content: space-between;
         margin-bottom: 1rem;
     }
 
-    .formulario .container-formulario .nombreCompleto .datos{
+    .formulario .container-formulario .nombreCompleto .datos {
         width: 100%;
         margin-bottom: 1rem;
     }
 
-    .formulario .container-formulario{
+    .formulario .container-formulario {
         width: 80vw;
     }
 
-    .footer .container-footer{
+    .footer .container-footer {
         flex-direction: column;
         padding: 1rem 0;
     }
 
-    .footer .container-footer a{
+    .footer .container-footer a {
         padding: 0.5rem 0;
         width: 100%;
         text-align: center;
     }
+
 }
 
 /* Para 576 */
-@media(max-width: 576px){
-    
-    .fondo .contenido{
+@media(max-width: 576px) {
+
+    .fondo .contenido {
         width: 100%;
         margin-bottom: 20vh;
         text-align: center;
-        
+
         justify-content: center;
     }
 
-    .fondo .boton{
+    .fondo .boton {
         display: flex;
         flex-direction: column;
         justify-content: center;
